@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MiprimeravezModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="MiprimeravezEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Artículos" EntityType="MiprimeravezModel.Artículos" />
+    <EntitySet Name="Clientes" EntityType="MiprimeravezModel.Clientes" />
+    <EntitySet Name="ClientesPasivos" EntityType="MiprimeravezModel.ClientesPasivos" />
+    <EntitySet Name="Info" EntityType="MiprimeravezModel.Info" />
+    <EntitySet Name="Proveedores" EntityType="MiprimeravezModel.Proveedores" />
+    <EntitySet Name="Vehículo" EntityType="MiprimeravezModel.Vehículo" />
+  </EntityContainer>
+  <EntityType Name="Artículos">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="descripción" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="marca" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="precio" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="stock" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Clientes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Dirección" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CUI" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="tipcliente" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Teléfono" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ClientesPasivos">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Dirección" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CUI" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="fecha" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Saldo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Teléfono" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Info">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="dirección" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="edad" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="celular" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Proveedores">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="empresa" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="dvisita" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="visitmes" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Vehículo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="modelo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="marca" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

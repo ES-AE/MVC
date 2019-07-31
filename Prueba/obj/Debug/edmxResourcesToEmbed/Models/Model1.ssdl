@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MiprimeravezModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Artículos">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="nvarchar" MaxLength="255" />
+    <Property Name="descripción" Type="nvarchar" MaxLength="200" />
+    <Property Name="marca" Type="nvarchar" MaxLength="200" />
+    <Property Name="precio" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="stock" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Clientes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="255" />
+    <Property Name="Dirección" Type="nvarchar" MaxLength="200" />
+    <Property Name="CUI" Type="nvarchar" MaxLength="200" />
+    <Property Name="tipcliente" Type="nvarchar" MaxLength="50" />
+    <Property Name="Teléfono" Type="int" />
+  </EntityType>
+  <EntityType Name="ClientesPasivos">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="255" />
+    <Property Name="Dirección" Type="nvarchar" MaxLength="200" />
+    <Property Name="CUI" Type="nvarchar" MaxLength="200" />
+    <Property Name="fecha" Type="nvarchar" MaxLength="50" />
+    <Property Name="Saldo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Teléfono" Type="int" />
+  </EntityType>
+  <EntityType Name="Info">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="nvarchar" MaxLength="255" />
+    <Property Name="dirección" Type="nvarchar" MaxLength="255" />
+    <Property Name="edad" Type="nvarchar" MaxLength="255" />
+    <Property Name="celular" Type="int" />
+  </EntityType>
+  <EntityType Name="Proveedores">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="nvarchar" MaxLength="255" />
+    <Property Name="empresa" Type="nvarchar" MaxLength="200" />
+    <Property Name="dvisita" Type="nvarchar" MaxLength="200" />
+    <Property Name="visitmes" Type="int" />
+  </EntityType>
+  <EntityType Name="Vehículo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripcion" Type="nvarchar" MaxLength="255" />
+    <Property Name="modelo" Type="nvarchar" MaxLength="255" />
+    <Property Name="marca" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="MiprimeravezModelStoreContainer">
+    <EntitySet Name="Artículos" EntityType="Self.Artículos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ClientesPasivos" EntityType="Self.ClientesPasivos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Info" EntityType="Self.Info" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Proveedores" EntityType="Self.Proveedores" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vehículo" EntityType="Self.Vehículo" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Prueba.Models.Proveedores>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Proveedores</h2>
+
+<p>
+    @Html.ActionLink("Agregar Nuevo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.empresa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dvisita)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.visitmes)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.empresa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dvisita)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.visitmes)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
